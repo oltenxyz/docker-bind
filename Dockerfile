@@ -1,8 +1,9 @@
 FROM ubuntu:focal AS add-apt-repositories
 
 RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg \
- && apt-key adv --fetch-keys http://www.webmin.com/jcameron-key.asc \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg curl \
+ && curl https://www.webmin.com/jcameron-key.asc -o /tmp/jcameron-key.asc \
+ && apt-key add /tmp/jcameron-key.asc \
  && echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
 
 FROM ubuntu:focal

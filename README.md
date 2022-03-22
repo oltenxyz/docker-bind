@@ -1,6 +1,6 @@
-This fork was created because the Dockerhub image is not being maintained anymore.
+This fork was created because the Docker Hub image sameersbn/docker-bind is not maintained anymore.
 
-# oltenxyz/bind:9.16.1-20210508
+# oltenxyz/bind:9.16.1-20220322
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -46,7 +46,7 @@ If the above recommendations do not help then [report your issue](../../issues/n
 Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/oltenxyz/bind) and is the recommended method of installation.
 
 ```bash
-docker pull oltenxyz/bind:9.16.1-20210508
+docker pull oltenxyz/bind:9.16.1-20220322
 ```
 
 Alternatively you can build the image yourself.
@@ -63,7 +63,7 @@ Start BIND using:
 docker run --name bind -d --restart=always \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
-  oltenxyz/bind:9.16.1-20210508
+  oltenxyz/bind:9.16.1-20220322
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -82,7 +82,7 @@ You can customize the launch command of BIND server by specifying arguments to `
 docker run --name bind -it --rm \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
-  oltenxyz/bind:9.16.1-20210508 -h
+  oltenxyz/bind:9.16.1-20220322 -h
 ```
 
 ## Persistence
@@ -121,7 +121,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull oltenxyz/bind:9.16.1-20210508
+  docker pull oltenxyz/bind:9.16.1-20220322
   ```
 
   2. Stop the currently running image:
@@ -141,7 +141,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name bind -d \
     [OPTIONS] \
-    oltenxyz/bind:9.16.1-20210508
+    oltenxyz/bind:9.16.1-20220322
   ```
 
 ## Shell Access
